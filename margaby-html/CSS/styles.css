@@ -2162,3 +2162,113 @@ body.social-media-theme .back-to-spec-link:hover,
 body.social-media-theme .pagination-link:hover {
   color: var(--color-terracota) !important;
 }
+
+
+/* =================================================================ive
+   ESTILOS RESPONSIVOS PARA TELÉFONOS (Móviles)
+   =================================================================== */
+
+@media screen and (max-width: 768px) {
+  /* 1. Ajustar contenedores generales y padding lateral */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* 2. Barra de navegación adaptada para móvil */
+  .navbar-container {
+    padding: 15px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .nav-menu .nav-link {
+    font-size: 13px;
+  }
+
+  /* 3. Sección Hero (Principal) */
+  .hero-section-web {
+    padding: 40px 20px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero-text-content h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .hero-text-content p {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-terracota, 
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 4. Sección Sobre Mí */
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .arch-frame {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  /* 5. Tarjetas de Proyectos / Especializaciones */
+  .projects-horizontal-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .project-horizontal-card {
+    flex-direction: column;
+  }
+
+  .proj-h-img-wrapper {
+    width: 100%;
+    height: 200px;
+  }
+
+  /* 6. Sección de Contacto */
+  .contact-container {
+    padding: 40px 20px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* 7. Ocultar o reposicionar elementos decorativos pesados en móvil */
+  .dark-right-blob, 
+  .terracota-circle {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+}
