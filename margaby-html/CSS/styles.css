@@ -485,6 +485,10 @@ body {
 
 .spec-item {
   text-align: center;
+  text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
 /* Contenedor del icono con fondo elegante y sutil */
