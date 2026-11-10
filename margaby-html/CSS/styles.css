@@ -126,37 +126,46 @@ body {
   background-color: var(--color-fondo);
   z-index: 100;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 0.1rem 1rem;
+  padding: 10px 1rem;
 }
 
 .navbar-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 50px;
 }
 
 .nav-logo-img {
-  height: 230px;
+  height: 150px;
   width: auto;
   display: block;
 }
 
 .nav-menu {
+  gap: 40px; /* Separación elegante entre los enlaces */
+    margin-left: auto;
   display: flex;
-  gap: 2rem;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 0;
+
 }
 
 .nav-link {
-  font-family: var(--font-subtitulos);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-principal);
+
+  color: #000000;
   text-decoration: none;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  transition: color 0.3s;
 }
+
 
 .nav-link:hover, .nav-link.active {
   color: var(--color-terracota);
@@ -478,7 +487,7 @@ body {
 /* Tarjetas de especializaciones */
 .about-specialities {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1zfr);
   gap: 1.5rem;
   margin-top: 3rem;
 }
