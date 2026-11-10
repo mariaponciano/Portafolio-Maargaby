@@ -1,0 +1,2164 @@
+/* Estilos globales y paleta de colores */
+:root {
+  --color-fondo: #ede0ce;
+  --color-principal: #1A2332;
+  --color-terracota: #A34830;
+  --color-dorado: #D4AF37;
+  --font-titulos: 'News706 BT', serif;
+  --font-subtitulos: 'Montserrat', sans-serif;
+  --font-contenido: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-principal);
+  font-family: var(--font-contenido);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Asegura el posicionamiento relativo en la sección hero */
+.hero-section-web {
+  position: relative;
+  overflow: hidden; /* Evita scrolls no deseados si la onda sobresale */
+}
+
+/* 1. La línea vertical azul pegada al borde izquierdo */
+.blue-left-line {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;               /* Pegada 100% a la orilla izquierda */
+  width: 16px !important;           /* Ancho elegante y definido */
+  height: 100% !important;
+  background-color: #0b1a2d !important; /* Azul marino profundo */
+  z-index: 10 !important;
+}
+
+.blue-right-wave-svg {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 100px !important;             /* Ajusta qué tan delgada se ve */
+  height: 100% !important;
+  z-index: 1 !important;
+  pointer-events: none;
+}
+/* 4. Destellos dorados (Estrellas) */
+.gold-star {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+.star-hero-1 {
+  top: 20%;
+  left: 35%;
+  width: 350px;
+}
+.star-hero-2 {
+  bottom: 10%;
+  right: 75%;
+  width: 400px;
+}
+.star-hero-3 {
+  top: 32%;
+  right: 82%;
+  width: 300px;
+}
+.star-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 1. Línea vertical azul a la izquierda */
+.blue-left-line {
+  position: absolute;
+  top: 10%;
+  left: 3rem;
+  width: 4px;
+  height: 65%;
+  background-color: #0b1a2d; /* Azul marino elegante */
+  border-radius: 2px;
+  opacity: 0.85;
+  z-index: 1;
+}
+
+/* 2. Onda/Mancha azul vertical a la derecha */
+.blue-right-wave {
+  position: absolute;
+  top: 50%;
+  right: -80px;
+  transform: translateY(-50%);
+  width: 220px;
+  height: 480px;
+  background-color: #0b1a2d; /* Azul marino elegante */
+  border-radius: 50% 0 0 50% / 40% 0 0 60%; /* Crea la curva suavizada tipo onda */
+  opacity: 0.9;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Responsivo para ocultar las formas en celulares y no estorbar el texto */
+@media (max-width: 992px) {
+  .blue-left-line,
+  .blue-right-wave {
+    display: none;
+  }
+}
+
+.navbar-header {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-fondo);
+  z-index: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0.1rem 1rem;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo-img {
+  height: 230px;
+  width: auto;
+  display: block;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-family: var(--font-subtitulos);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-principal);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-terracota);
+}
+
+/* Estilos generales del Hero Web */
+.hero-section-web {
+  padding: 2rem 3rem 4rem 3rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+  min-height: 70vh;
+}
+
+/* Textos de la izquierda */
+.hero-text-content .sub-tag {
+  font-family: var(--font-subtitulos);
+  color: var(--color-terracota);
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.hero-text-content h1 {
+  font-family: var(--font-titulos);
+  font-size: 4rem;
+  color: var(--color-principal);
+  line-height: 1.05;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.hero-text-content h1 .highlight-text {
+  color: var(--color-terracota);
+}
+
+.hero-text-content p {
+  font-size: 1.1rem;
+  max-width: 480px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 2.5rem;
+}
+
+/* Botones de acción */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-terracota {
+  background-color: var(--color-terracota);
+  color: white;
+  padding: 0.9rem 1.8rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: var(--font-subtitulos);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  transition: opacity 0.3s;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1.5px solid var(--color-principal);
+  color: var(--color-principal);
+  padding: 0.9rem 1.8rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: var(--font-subtitulos);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-principal);
+  color: white;
+}
+
+/* Contenedor de la imagen y formas orgánicas de fondo (Derecha) */
+.hero-visual-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 480px;
+}
+
+/* Formas curvas / manchas orgánicas de fondo */
+.decorative-shape {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+}
+/* Contenedor visual derecho */
+.hero-visual-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  overflow: visible;
+}
+
+/* Mancha terracota circular superior */
+.terracota-circle {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background-color: var(--color-terracota);
+  border-radius: 50%;
+  top: 20px;
+  right: 180px;
+  z-index: 1;
+  opacity: 0.95;
+}
+
+/* Mancha oscura de la derecha con la curva orgánica */
+.dark-right-blob {
+  position: absolute;
+  width: 280px;
+  height: 450px;
+  background-color: var(--color-terracota);
+  border-radius: 200px 0 0 200px;
+  right: -50px;
+  bottom: 10px;
+  z-index: 1;
+}
+
+/* Líneas y arcos dorados decorativos */
+.gold-arc {
+  position: absolute;
+  border: 2px solid var(--color-dorado);
+  border-radius: 50%;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.arc-one {
+  width: 380px;
+  height: 380px;
+  top: -20px;
+  right: 120px;
+  opacity: 0.7;
+}
+
+.arc-two {
+  width: 480px;
+  height: 480px;
+  bottom: -50px;
+  right: 40px;
+  opacity: 0.4;
+}
+
+/* Cuadro enmarcado al centro de los elementos */
+.framed-image-container {
+  position: relative;
+  z-index: 3;
+  background: #fff;
+  padding: 12px 12px 35px 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border: 2px solid #5a3e2b;
+  transform: rotate(3deg);
+  max-width: 300px;
+}
+
+.hero-featured-img {
+  width: 105%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Posición de los destellos dorados */
+.gold-star-burst {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.top-burst {
+  top: 140px;
+  right: 220px;
+}
+
+.bottom-burst {
+  bottom: 40px;
+  right: 60px;
+}
+
+.burst-img {
+  width: 300px;
+  height: auto;
+  display: block;
+}
+
+
+/* Barra inferior del Hero */
+.hero-footer-bar {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-top: 1px solid #c98621;
+  padding-top: 1.5rem;
+  font-family: var(--font-subtitulos);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  color: var(--color-principal);
+}
+
+.hero-footer-bar .divider-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #dcd6ce;
+}
+
+.specialities-footer-list {
+  font-weight: 600;
+}
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-text-content h1 {
+    font-size: 2.8rem;
+  }
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-visual-content {
+    margin-top: 2rem;
+  }
+  .hero-footer-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .hero-footer-bar .divider-line {
+    display: none;
+  }
+}
+
+/* Estilos Sección Sobre Mí */
+.about-section {
+  padding: 6rem 2rem;
+  background-color: #EFE9E1; /* Un tono ligeramente contrastante para la sección */
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-content h2 {
+  font-family: var(--font-titulos);
+  font-size: 3rem;
+  color: var(--color-principal);
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.about-content h3 {
+  font-family: var(--font-subtitulos);
+  color: var(--color-terracota);
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-principal);
+}
+
+/* Marco de arco decorativo para la foto */
+.arch-frame {
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  background-color: var(--color-terracota);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: 2px solid var(--color-dorado);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  margin: 0 auto;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Tarjetas de especializaciones */
+.about-specialities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.spec-item {
+  text-align: center;
+}
+
+/* Contenedor del icono con fondo elegante y sutil */
+.spec-icon-box {
+  width: 90px;
+  height: 90px;
+  background-color: rgba(184, 85, 51, 0.08); 
+  border: 1px solid rgba(184, 85, 51, 0.2); 
+  border-radius: 16%; /* Los hace circulares (puedes cambiar a 16px si prefieres cuadrados redondeados) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.8rem auto;
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el cursor por encima (hover) */
+.spec-item:hover .spec-icon-box {
+  background-color: var(--color-terracota);
+  transform: translateY(-5px);
+}
+
+.spec-item:hover .spec-icon-box .spec-icon {
+  filter: brightness(0) invert(1); 
+}
+
+/* Tamaño de la imagen del icono dentro de su caja */
+.spec-icon {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.spec-item h4 {
+  font-family: var(--font-subtitulos);
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+  color: var(--color-principal);
+}
+
+.spec-item p {
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+
+/* Responsive para celulares en Sobre Mí */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .about-specialities {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.projects-section {
+  padding: 6rem 2rem;
+  background-color: var(--color-fondo);
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.speciality-block {
+  margin-bottom: 5rem;
+}
+
+.speciality-intro {
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--color-terracota);
+  padding-left: 1rem;
+}
+
+.spec-number {
+  font-family: var(--font-subtitulos);
+  font-size: 0.8rem;
+  color: var(--color-terracota);
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+.speciality-intro h3 {
+  font-size: 2.2rem;
+  margin: 0.3rem 0;
+  color: var(--color-principal);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #EFE9E1;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card h4 {
+  font-family: var(--font-subtitulos);
+  font-size: 1.1rem;
+  margin: 1rem 1rem 0.2rem 1rem;
+  color: var(--color-principal);
+}
+
+.project-tag {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-terracota);
+  margin: 0 1rem 0.8rem 1rem;
+  font-weight: 600;
+  font-family: var(--font-subtitulos);
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  margin: 0 1rem 1.5rem 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Estilos Sección Contacto */
+.contact-section {
+  padding: 6rem 2rem;
+  background-color: #EFE9E1;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-header {
+  margin-bottom: 4rem;
+  max-width: 600px;
+}
+
+.contact-header h2 {
+  font-family: var(--font-titulos);
+  font-size: 3rem;
+  color: var(--color-principal);
+  margin: 0.5rem 0 1rem 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.info-item .icon {
+  font-size: 1.5rem;
+  color: var(--color-terracota);
+}
+
+.info-item h4 {
+  font-family: var(--font-subtitulos);
+  font-size: 0.9rem;
+  margin: 0;
+  color: var(--color-principal);
+}
+
+.info-item p {
+  margin: 0.2rem 0 0 0;
+  color: #444;
+  font-size: 1rem;
+}
+
+.social-links h4 {
+  font-family: var(--font-subtitulos);
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-principal);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: white;
+  background-color: var(--color-principal);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: var(--font-subtitulos);
+  transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: var(--color-terracota);
+}
+
+/* Formulario */
+.contact-form {
+  background: var(--color-fondo);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.contact-form h3 {
+  font-family: var(--font-titulos);
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--color-principal);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-family: var(--font-subtitulos);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-principal);
+  margin-bottom: 0.4rem;
+  letter-spacing: 1px;
+}
+
+.form-group input, 
+.form-group textarea {
+  padding: 0.8rem;
+  border: 1px solid #dcd6ce;
+  border-radius: 4px;
+  background-color: white;
+  font-family: var(--font-contenido);
+  font-size: 0.95krem;
+  color: var(--color-principal);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-terracota);
+}
+
+.btn-terracota-submit {
+  background-color: var(--color-terracota);
+  color: white;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-family: var(--font-subtitulos);
+  font-size: 0.85rem;
+  cursor: pointer;
+  width: 100%;
+  transition: opacity 0.3s;
+}
+
+.btn-terracota-submit:hover {
+  opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--color-principal);
+  color: #F4EFEA;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-logo {
+  font-family: var(--font-titulos);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.footer p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.footer-specialities {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  font-family: var(--font-subtitulos);
+}
+
+/* Responsive para Contacto en celulares */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+/* Grilla de Especialidades en la portada */
+/* Estilo para las descripciones breves opcionales en horizontal */
+.proj-h-desc {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Grilla de filas horizontales */
+.projects-horizontal-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Tarjeta panorámica horizontal */
+.project-horizontal-card {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr; /* Lado izquierdo imagen más ancha, lado derecho texto */
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-horizontal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Contenedor de la Imagen */
+.proj-h-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Altura generosa para apreciar los detalles de las portadas principales */
+  overflow: hidden;
+  background-color: var(--color-secundario);
+}
+
+.proj-h-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.project-horizontal-card:hover .proj-h-img {
+  transform: scale(1.05);
+}
+
+/* Overlay Interactivo */
+.proj-h-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 25, 47, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.proj-h-overlay span {
+  color: #fff;
+  font-family: var(--font-subtitulos);
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  border: 1px solid #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 4px;
+}
+
+.project-horizontal-card:hover .proj-h-overlay {
+  opacity: 1;
+}
+
+/* Contenido de texto a la derecha */
+.proj-h-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.proj-h-tag {
+  font-family: var(--font-subtitulos);
+  font-size: 0.75rem;
+  color: var(--color-terracota);
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.proj-h-content h3 {
+  font-family: var(--font-titulos);
+  font-size: 2.2rem;
+  color: var(--color-principal);
+  margin-bottom: 0.8rem;
+}
+
+.explore-text {
+  font-family: var(--font-subtitulos);
+  font-size: 0.8rem;
+  color: var(--color-principal);
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--color-principal);
+  padding-bottom: 2px;
+  display: inline-block;
+  width: fit-content;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.project-horizontal-card:hover .explore-text {
+  color: var(--color-terracota);
+  border-color: var(--color-terracota);
+}
+
+/* Adaptabilidad para Celulares */
+@media (max-width: 768px) {
+  .project-horizontal-card {
+    grid-template-columns: 1fr; /* Se acomoda en vertical automáticamente en pantallas chicas */
+  }
+  .proj-h-img-wrapper {
+    height: 220px;
+  }
+  .proj-h-content {
+    padding: 1.5rem;
+  }
+}
+
+
+/* Estilos para la página de especialización Fotografía */
+/* Color de fondo global para la página */
+body {
+  background-color: var(--color-fondo, #f7f4ee);
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* PORTADA DE ESPECIALIDAD (ESTILO BANNER AZUL OSCURO) */
+/* --- PORTADA ORGÁNICA ESTILO EDITORIAL --- */
+.hero-specialty-organic {
+  background-color: #0b1a2d; /* Azul navy profundo */
+  color: #ffffff;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 2.5rem;
+}
+
+/* Barra de navegación superior */
+.navbar-organic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: -1rem 2rem;
+  box-sizing: border-box;
+}
+
+.nav-menu-organic {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link-org {
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-link-org:hover, .nav-link-org.active {
+  color: #b85533; /* Terracota */
+}
+
+
+/* Acento derecho de la barra (Línea y estrella superior) */
+.header-right-accent {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.accent-line {
+  width: 90px;
+  height: 1px;
+  background-color: rgba(212, 175, 55, 0.4);
+}
+
+.star-icon {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+/* Contenedor central (Grid de 3 partes: Texto | Curvas | Imagen) */
+.hero-organic-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1.4fr; /* Izquierda texto, centro curvas, derecha imagen amplia */
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 0 0 3rem; /* Margen izquierdo alineado con el logo */
+  box-sizing: border-box;
+  position: relative;
+  min-height: 420px;
+}
+
+/* Lado izquierdo (Textos) */
+.hero-text-side {
+  z-index: 3;
+  padding-right: 2rem;
+}
+
+.spec-num {
+  color: #b85533;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.spec-main-title {
+  font-family: var(--font-titulos, serif);
+  font-size: 3.8rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.spec-main-title .dot {
+  color: #b85533;
+}
+
+.spec-desc {
+  color: #b0b8c4;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 380px;
+}
+
+/* Botón interactivo circular estilo píldora */
+.explore-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+
+.circle-arrow {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.explore-pill-btn:hover .circle-arrow {
+  background-color: #b85533;
+  border-color: #b85533;
+}
+
+/* Capa central con arcos dorados y destellos */
+.organic-transition-layer {
+  position: relative;
+  width: 40px;
+  height: 100%;
+  z-index: 4;
+}
+
+.gold-arc-curve {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(212, 175, 55, 0.4); /* Dorado sutil */
+  pointer-events: none;
+}
+
+.arc-1 {
+  width: 350px;
+  height: 350px;
+  top: -100px;
+  left: -200px;
+}
+
+.arc-2 {
+  width: 450px;
+  height: 450px;
+  bottom: -200px;
+  left: -280px;
+}
+
+.gold-star-middle {
+  position: absolute;
+  top: 45%;
+  left: -35px;
+  transform: translateY(-50%);
+}
+
+.gold-star-middle .star-icon {
+  width: 35px;
+}
+
+/* Lado derecho (Imagen panorámica con el corte curvo orgánico a la izquierda) */
+.hero-image-side {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  border-top-left-radius: 220px; /* Crea la curva orgánica idéntica a la referencia */
+  border-bottom-left-radius: 220px;
+  overflow: hidden;
+  box-shadow: -15px 0 35px rgba(0, 0, 0, 0.3);
+}
+
+.curved-portada-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* SECCIÓN DE PROYECTOS DESTACADOS */
+.main-projects-container {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.projects-section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-tag {
+  display: block;
+  font-size: 0.75rem;
+  color: #b85533;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  color: #0b1a2d;
+  margin: 0;
+}
+
+.projects-horizontal-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.project-horizontal-card {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-horizontal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.proj-h-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 320px; /* <--- Tamaño grande para lucir las fotos */
+  overflow: hidden;
+}
+
+.proj-h-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-horizontal-card:hover .proj-h-img {
+  transform: scale(1.05);
+}
+
+.proj-h-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 26, 45, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.proj-h-overlay span {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  border: 1px solid #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 4px;
+}
+
+.project-horizontal-card:hover .proj-h-overlay {
+  opacity: 1;
+}
+
+.proj-h-content {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.proj-h-tag {
+  font-size: 0.75rem;
+  color: #b85533;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.proj-h-content h3 {
+  font-size: 2.2rem;
+  color: #0b1a2d;
+  margin: 0 0 0.8rem 0;
+}
+
+.proj-h-desc {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.explore-text {
+  font-size: 0.85rem;
+  color: #0b1a2d;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.footer-site {
+  text-align: center;
+  padding: 2rem;
+  color: #777;
+  font-size: 0.85rem;
+  border-top: 1px solid #e0dcd5;
+}
+
+/*PROYECTO CAPERUCITA ROJA*/
+.project-single-page {
+  background-color: #f7f4ee;
+  color: #0b1a2d;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Banner de cabecera */
+.project-detail-hero {
+  background-color: #0b1a2d;
+  color: #ffffff;
+ padding: 2rem 2rem 2.5rem 2rem;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.project-hero-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.back-to-spec-link {
+  color: #d4af37; /* Dorado */
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  transition: opacity 0.3s;
+}
+
+.back-to-spec-link:hover {
+  opacity: 0.8;
+}
+
+.proj-category-tag {
+  color: #b85533;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.proj-title {
+  font-family: var(--font-titulos, serif);
+  font-size: 4rem;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+}
+
+.proj-title .dot {
+  color: #b85533;
+}
+
+.proj-subtitle {
+  color: #b0b8c4;
+  font-size: 0.99rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Contenido principal y ficha técnica */
+.project-main-content {
+  max-width: 1200px;
+  margin: -3rem auto 0 auto; /* Solapa ligeramente sobre el banner oscuro para un efecto moderno */
+  padding: 0 3rem 5rem 3rem;
+  position: relative;
+  z-index: 5;
+}
+
+.project-meta-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.04);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.meta-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.meta-label {
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  color: #b85533;
+  font-weight: bold;
+}
+
+.meta-val {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0b1a2d;
+}
+
+/* Sección de la historia / concepto */
+.project-story-section {
+  max-width: 750px;
+  margin-bottom: 4rem;
+}
+
+.project-story-centered {
+  width: 100%;
+  max-width: 1200px; /* Alineado al mismo ancho máximo que las fotos de abajo */
+  margin: 0 auto 3.5rem auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+
+.project-story-section h2 {
+  font-family: var(--font-titulos, serif);
+  font-size: 2.2rem;
+  color: #0b1a2d;
+  margin-bottom: 1rem;
+}
+
+.project-story-section p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+/* --- VISOR DE FOTOGRAFÍA CENTRADO (UNA FOTO A LA VEZ) --- */
+
+.project-gallery-section-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 1.5rem 0 3.5rem 0;
+  padding: 1.5rem 0;
+  overflow: hidden;
+}
+
+/* Pista que centra una sola foto principal en pantalla */
+.photo-carousel-track {
+  display: flex;
+  gap: 3rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  
+  /* Ocasiona un scroll suave y limpio */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ocultar barra de scroll para una estética totalmente limpia (opcional) */
+.photo-carousel-track::-webkit-scrollbar {
+  height: 6px;
+}
+.photo-carousel-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+.photo-carousel-track::-webkit-scrollbar-thumb {
+  background-color: rgba(212, 175, 55, 0.4);
+  border-radius: 4px;
+}
+
+/* Cada contenedor individual de foto */
+.carousel-item {
+  flex: 0 0 100%;             /* Ocupa el 100% del ancho para mostrar 1 sola foto */
+  scroll-snap-align: center;   /* Fuerza a que la foto encaje exactamente al centro */
+  scroll-snap-stop: always;    /* Obliga a ir pasando de una en una */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+/* La imagen principal en gran formato */
+.car-img {
+  max-width: 90%;
+  height: 650px;               /* Mayor altura para apreciar cada foto en detalle */
+  object-fit: contain;          /* No corta ninguna orilla de la fotografía */
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  padding: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s ease;
+}
+
+.car-img:hover {
+  transform: scale(1.01);
+}
+
+/* Adaptación responsive para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .car-img {
+    height: 420px;
+    max-width: 95%;
+    padding: 8px;
+  }
+}
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+  .photo-carousel-track {
+    padding: 1rem 1.5rem;
+  }
+  .car-img {
+    height: 350px;
+  }
+}
+
+/* Navegación inferior entre proyectos */
+.project-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #dcd6ce;
+  padding-top: 3rem;
+  margin-top: 5rem;
+}
+
+.pagination-link {
+  text-decoration: none;
+  color: #0b1a2d;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.pagination-link:hover {
+  color: #b85533;
+}
+
+/* Contenedor relativo para que las manchas floten de fondo sin estorbar el texto */
+.organic-bg-container {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.6); /* Fondo sutil para resaltar sobre el papel */
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  margin-bottom: 4rem;
+}
+
+.story-content-box {
+width: 100%; /* Ocupa el 100% de su contenedor */
+  background-color: rgba(255, 255, 255, 0.75); /* Fondo suave estilo pergamino/tarjeta */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 3rem 4rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  text-align: center; /* Centra el título y el párrafo */
+  position: relative;
+  overflow: hidden;
+}
+
+/* 1. Mancha circular en tono carmesí/terracota */
+.blob-red-circle {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background-color: #c0392b; /* Tono carmesí de Caperucita */
+  border-radius: 50%;
+  top: -40px;
+  right: -50px;
+  opacity: 0.12; /* Suave para que no opaque el texto */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 2. Mancha curva orgánica lateral estilo la del Index */
+.blob-dark-curve {
+  position: absolute;
+  width: 250px;
+  height: 350px;
+  background-color: #0b1a2d; /* Azul navy profundo */
+  border-radius: 180px 0 0 180px;
+  right: 0;
+  bottom: -60px;
+  opacity: 0.07;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 3. Arco dorado decorativo */
+.gold-arc-decor {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border: 1.5px solid #d4af37; /* Dorado */
+  border-radius: 50%;
+  top: -80px;
+  right: 40px;
+  opacity: 0.25;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ajuste responsive para celulares en la galería */
+@media (max-width: 768px) {
+  .gallery-item-duo {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*PROYECTO ENTRE LUCCES*/
+
+/* --- TEMA ESPECIAL: ENTRE LUCES (Vibra Estudio / Contraste de Luces) --- */
+
+/* El banner adopta un tono nocturno profundo con un acento turquesa en la línea */
+body.entre-luces-theme .project-detail-hero {
+  background-color: #081424; 
+  border-bottom: 3px solid #2980b9; /* Línea de acento en azul turquesa de estudio */
+}
+
+body.entre-luces-theme .navbar-organic {
+  background-color: #081424;
+}
+
+/* Acento de color turquesa/dorado para las etiquetas */
+body.entre-luces-theme .proj-category-tag,
+body.entre-luces-theme .proj-title .dot {
+  color: #3498db !important;
+}
+
+body.entre-luces-theme .back-to-spec-link:hover,
+body.entre-luces-theme .pagination-link:hover {
+  color: #3498db;
+}
+
+/* Manchas orgánicas adaptadas a la paleta de iluminación */
+.blob-turq-top {
+  width: 350px;
+  height: 350px;
+  background-color: #2980b9;
+  top: 40px;
+  right: -90px;
+  opacity: 0.1;
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.blob-blue-light {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-color: #3498db;
+  top: -50px;
+  left: -40px;
+  opacity: 0.08;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* --- VISOR DE FOTOGRAFÍA CENTRADO (UNA FOTO A LA VEZ) --- */
+
+.project-gallery-section-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 1.5rem 0 3.5rem 0;
+  padding: 1.5rem 0;
+  overflow: hidden;
+}
+
+/* Pista que centra una sola foto principal en pantalla */
+.photo-carousel-track {
+  display: flex;
+  gap: 3rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  
+  /* Ocasiona un scroll suave y limpio */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ocultar barra de scroll para una estética totalmente limpia (opcional) */
+.photo-carousel-track::-webkit-scrollbar {
+  height: 6px;
+}
+.photo-carousel-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+.photo-carousel-track::-webkit-scrollbar-thumb {
+  background-color: rgba(212, 175, 55, 0.4);
+  border-radius: 4px;
+}
+
+/* Cada contenedor individual de foto */
+.carousel-item {
+  flex: 0 0 100%;             /* Ocupa el 100% del ancho para mostrar 1 sola foto */
+  scroll-snap-align: center;   /* Fuerza a que la foto encaje exactamente al centro */
+  scroll-snap-stop: always;    /* Obliga a ir pasando de una en una */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+/* La imagen principal en gran formato */
+.car-img {
+  max-width: 90%;
+  height: 650px;               /* Mayor altura para apreciar cada foto en detalle */
+  object-fit: contain;          /* No corta ninguna orilla de la fotografía */
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  padding: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s ease;
+}
+
+.car-img:hover {
+  transform: scale(1.01);
+}
+
+/* Adaptación responsive para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .car-img {
+    height: 420px;
+    max-width: 95%;
+    padding: 8px;
+  }
+}
+/*PROYECTO URANA/*
+/* --- TEMA ESPECIAL: ESENCIA URBANA (Vibra Urbana / Cálida) --- */
+
+/* El banner se mantiene en azul marino profundo con la línea de acento terracota */
+body.esencia-urbana-theme .project-detail-hero {
+  background-color: #0b1a2d;
+  border-bottom: 3px solid #d35400; /* Terracota / Naranja cálido urbano */
+}
+
+body.esencia-urbana-theme .navbar-organic {
+  background-color: #0b1a2d;
+}
+
+/* Acento de color terracota/naranja para etiquetas y puntos */
+body.esencia-urbana-theme .proj-category-tag,
+body.esencia-urbana-theme .proj-title .dot {
+  color: #e67e22 !important;
+}
+
+body.esencia-urbana-theme .back-to-spec-link:hover,
+body.esencia-urbana-theme .pagination-link:hover {
+  color: #e67e22;
+}
+
+/* Manchas orgánicas con tonos cálidos para la galería urbana */
+.blob-orange-top {
+  width: 360px;
+  height: 360px;
+  background-color: #e67e22;
+  top: 30px;
+  right: -80px;
+  opacity: 0.12;
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.blob-terracotta-light {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background-color: #d35400;
+  top: -40px;
+  right: -30px;
+  opacity: 0.08;
+  border-radius: 50%;
+  pointer-events: none;
+}
+/* --- VISOR DE FOTOGRAFÍA CENTRADO (UNA FOTO A LA VEZ) --- */
+
+.project-gallery-section-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 1.5rem 0 3.5rem 0;
+  padding: 1.5rem 0;
+  overflow: hidden;
+}
+
+/* Pista que centra una sola foto principal en pantalla */
+.photo-carousel-track {
+  display: flex;
+  gap: 3rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  
+  /* Ocasiona un scroll suave y limpio */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ocultar barra de scroll para una estética totalmente limpia (opcional) */
+.photo-carousel-track::-webkit-scrollbar {
+  height: 6px;
+}
+.photo-carousel-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+.photo-carousel-track::-webkit-scrollbar-thumb {
+  background-color: rgba(212, 175, 55, 0.4);
+  border-radius: 4px;
+}
+
+/* Cada contenedor individual de foto */
+.carousel-item {
+  flex: 0 0 100%;             /* Ocupa el 100% del ancho para mostrar 1 sola foto */
+  scroll-snap-align: center;   /* Fuerza a que la foto encaje exactamente al centro */
+  scroll-snap-stop: always;    /* Obliga a ir pasando de una en una */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+/* La imagen principal en gran formato */
+.car-img {
+  max-width: 90%;
+  height: 650px;               /* Mayor altura para apreciar cada foto en detalle */
+  object-fit: contain;          /* No corta ninguna orilla de la fotografía */
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  padding: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s ease;
+}
+
+.car-img:hover {
+  transform: scale(1.01);
+}
+
+/* Adaptación responsive para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .car-img {
+    height: 420px;
+    max-width: 95%;
+    padding: 8px;
+  }
+}
+
+/*PORYECTO RETRTATO NATURAL*/
+/* --- TEMA ESPECIAL: RETRATOS NATURALES (Vibra Orgánica / Verde / Cálida) --- */
+
+/* El banner adopta un azul marino muy sobrio con la línea en verde oliva/bosque */
+body.retratos-naturales-theme .project-detail-hero {
+  background-color: #0b1a2d;
+  border-bottom: 3px solid #2e5a44; /* Verde bosque sutil */
+}
+
+body.retratos-naturales-theme .navbar-organic {
+  background-color: #0b1a2d;
+}
+
+/* Acento de color verde oliva / dorado suave para etiquetas y puntos */
+body.retratos-naturales-theme .proj-category-tag,
+body.retratos-naturales-theme .proj-title .dot {
+  color: #3e7b5e !important;
+}
+
+body.retratos-naturales-theme .back-to-spec-link:hover,
+body.retratos-naturales-theme .pagination-link:hover {
+  color: #3e7b5e;
+}
+
+/* Manchas orgánicas con tonos verdes suaves y dorados */
+.blob-green-top {
+  width: 380px;
+  height: 380px;
+  background-color: #2e5a44;
+  top: 30px;
+  right: -90px;
+  opacity: 0.1;
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.blob-gold-bottom {
+  width: 320px;
+  height: 320px;
+  background-color: #d4af37;
+  bottom: 80px;
+  left: -100px;
+  opacity: 0.08;
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.blob-green-light {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background-color: #3e7b5e;
+  top: -40px;
+  left: -40px;
+  opacity: 0.07;
+  border-radius: 50%;
+  pointer-events: none;
+}
+/* --- VISOR DE FOTOGRAFÍA CENTRADO (UNA FOTO A LA VEZ) --- */
+
+.project-gallery-section-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 1.5rem 0 3.5rem 0;
+  padding: 1.5rem 0;
+  overflow: hidden;
+}
+
+/* Pista que centra una sola foto principal en pantalla */
+.photo-carousel-track {
+  display: flex;
+  gap: 3rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  
+  /* Ocasiona un scroll suave y limpio */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ocultar barra de scroll para una estética totalmente limpia (opcional) */
+.photo-carousel-track::-webkit-scrollbar {
+  height: 6px;
+}
+.photo-carousel-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+.photo-carousel-track::-webkit-scrollbar-thumb {
+  background-color: rgba(212, 175, 55, 0.4);
+  border-radius: 4px;
+}
+
+/* Cada contenedor individual de foto */
+.carousel-item {
+  flex: 0 0 100%;             /* Ocupa el 100% del ancho para mostrar 1 sola foto */
+  scroll-snap-align: center;   /* Fuerza a que la foto encaje exactamente al centro */
+  scroll-snap-stop: always;    /* Obliga a ir pasando de una en una */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+/* La imagen principal en gran formato */
+.car-img {
+  max-width: 90%;
+  height: 650px;               /* Mayor altura para apreciar cada foto en detalle */
+  object-fit: contain;          /* No corta ninguna orilla de la fotografía */
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  padding: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s ease;
+}
+
+.car-img:hover {
+  transform: scale(1.01);
+}
+
+/* Adaptación responsive para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .car-img {
+    height: 420px;
+    max-width: 95%;
+    padding: 8px;
+  }
+}
+
+/* --- ESTILOS PARA LOS ICONOS DE REDES SOCIALES --- */
+.social-icons {
+  display: flex;
+  gap: 15px;             /* Espacio horizontal entre los iconos */
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+.social-icons a {
+  display: inline-block;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px); /* Efecto flot al pasar el cursor */
+}
+
+.social-icon {
+  width: 120px !important;     /* Tamaño pequeño y uniforme */
+  height: 120px !important;
+  object-fit: contain;
+  display: block;
+  background: transparent !important;
+}
+
+/* --- TARJETA DE CONCEPTO CENTRADA (PROYECTOS) --- */
+.story-content-box-centered {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 3.5rem 4rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.story-content-box-centered h2 {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-titulos, serif);
+  font-size: 2.3rem;
+  color: #0b1a2d;
+  margin: 0 0 1rem 0;
+}
+
+.story-content-box-centered p {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .story-content-box-centered {
+    padding: 2rem 1.5rem;
+  }
+
+  .story-content-box-centered h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* --- MANCHAS Y ARCOS DECORATIVOS DE GALERÍA --- */
+.gallery-organic-blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.blob-red-top {
+  width: 380px;
+  height: 380px;
+  background-color: #A34830;
+  top: -90px;
+  right: -110px;
+  opacity: 0.1;
+}
+
+.blob-navy-bottom {
+  width: 430px;
+  height: 430px;
+  background-color: #1A2332;
+  bottom: -150px;
+  left: -130px;
+  opacity: 0.07;
+}
+
+.gallery-gold-arc {
+  position: absolute;
+  border: 1.5px solid rgba(212, 175, 55, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.arc-gallery-left {
+  width: 420px;
+  height: 420px;
+  left: -220px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arc-gallery-right {
+  width: 320px;
+  height: 320px;
+  right: -160px;
+  top: 20px;
+}
+
+/* --- TEMA ILUSTRACIÓN (ACENTO DORADO) --- */
+body.ilustracion-theme .project-detail-hero {
+  background-color: #0b1a2d;
+  border-bottom: 3px solid var(--color-dorado);
+}
+
+body.ilustracion-theme .proj-title .dot,
+body.ilustracion-theme .back-to-spec-link:hover,
+body.ilustracion-theme .pagination-link:hover {
+  color: var(--color-dorado) !important;
+}
+
+/* --- TEMA SOCIAL MEDIA (ACENTO TERRACOTA) --- */
+body.social-media-theme .project-detail-hero {
+  background-color: #0b1a2d;
+  border-bottom: 3px solid var(--color-terracota);
+}
+
+body.social-media-theme .proj-title .dot,
+body.social-media-theme .back-to-spec-link:hover,
+body.social-media-theme .pagination-link:hover {
+  color: var(--color-terracota) !important;
+}

@@ -1,0 +1,16 @@
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Archivos temporales o logs
+*.log
+npm-debug.log*
+
+# Dependencias (por si usas Node.js más adelante)
+node_modules/
+
+# Archivos de compilación o distribución local
+dist/
+build/
