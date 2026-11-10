@@ -7,6 +7,18 @@
   --font-titulos: 'News706 BT', serif;
   --font-subtitulos: 'Montserrat', sans-serif;
   --font-contenido: 'Segoe UI', sans-serif;
+  --navbar-scroll-offset: 250px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#sobre-mi,
+#proyectos,
+#servicios,
+#contacto {
+  scroll-margin-top: var(--navbar-scroll-offset);
 }
 
 body {
@@ -16,6 +28,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 /* Asegura el posicionamiento relativo en la sección hero */
 .hero-section-web {
@@ -2164,109 +2178,324 @@ body.social-media-theme .pagination-link:hover {
 }
 
 
-/* =================================================================ive
+/* ===================================================================
    ESTILOS RESPONSIVOS PARA TELÉFONOS (Móviles)
    =================================================================== */
 
 @media screen and (max-width: 768px) {
-  /* 1. Ajustar contenedores generales y padding lateral */
-  body {
-    overflow-x: hidden;
+  :root {
+    --navbar-scroll-offset: 150px;
   }
 
-  /* 2. Barra de navegación adaptada para móvil */
+  body {
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+  .navbar-header {
+    padding: 0.35rem 0.75rem;
+  }
+
   .navbar-container {
-    padding: 15px 20px;
+    padding: 0.25rem 0;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .brand-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .nav-logo-img {
+    height: 72px;
+    width: 220px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto;
   }
 
   .nav-menu {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 10px;
+    justify-content: center;
+    gap: 0.6rem 1rem;
+    margin-top: 0;
+    width: 100%;
   }
 
   .nav-menu .nav-link {
-    font-size: 13px;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    padding: 0.2rem 0;
   }
 
-  /* 3. Sección Hero (Principal) */
   .hero-section-web {
-    padding: 40px 20px;
+    padding: 2rem 1.25rem 3rem;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 2rem;
+    text-align: center;
+    min-height: auto;
+  }
+
+  .hero-text-content {
+    min-width: 0;
   }
 
   .hero-text-content h1 {
-    font-size: 32px;
-    line-height: 1.2;
+    font-size: 2.4rem;
+    line-height: 1.15;
   }
 
   .hero-text-content p {
-    font-size: 15px;
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-buttons {
     flex-direction: column;
-    gap: 12px;
+    align-items: stretch;
+    gap: 0.75rem;
   }
 
-  .btn-terracota, 
+  .btn-terracota,
   .btn-outline {
     width: 100%;
     text-align: center;
+    box-sizing: border-box;
   }
 
-  /* 4. Sección Sobre Mí */
+  .hero-visual-content {
+    height: auto;
+    min-height: 420px;
+    min-width: 0;
+  }
+
+  .hero-featured-img {
+    width: 100%;
+    height: auto;
+    max-height: 380px;
+  }
+
+  .about-section,
+  .contact-section {
+    padding: 3.5rem 1.25rem;
+  }
+
   .about-container {
     grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 40px 20px;
+    gap: 2rem;
+    padding: 0;
   }
 
   .arch-frame {
-    max-width: 280px;
-    margin: 0 auto;
+    max-width: 260px;
+    height: 340px;
   }
 
-  /* 5. Tarjetas de Proyectos / Especializaciones */
-  .projects-horizontal-grid {
+  .about-specialities {
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0 15px;
+    gap: 1.5rem;
+  }
+
+  .about-content h2,
+  .contact-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .home-specialties-section {
+    padding: 0 1.25rem;
+  }
+
+  .main-projects-container {
+    padding: 0 1.25rem;
+    margin: 3rem auto;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
+  }
+
+  .projects-section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .projects-horizontal-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
   }
 
   .project-horizontal-card {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .proj-h-img-wrapper {
     width: 100%;
-    height: 200px;
+    height: 220px;
   }
 
-  /* 6. Sección de Contacto */
+  .proj-h-content {
+    padding: 1.5rem;
+  }
+
+  .proj-h-content h3 {
+    font-size: 1.8rem;
+  }
+
   .contact-container {
-    padding: 40px 20px;
+    padding: 0;
   }
 
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 2rem;
   }
 
   .form-row {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 0;
   }
 
-  /* 7. Ocultar o reposicionar elementos decorativos pesados en móvil */
-  .dark-right-blob, 
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer {
+    padding: 2rem 1.25rem;
+  }
+
+  .social-icon {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .hero-specialty-organic {
+    padding-bottom: 1.5rem;
+  }
+
+  .navbar-organic {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-menu-organic {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem 1rem;
+  }
+
+  .nav-link-org {
+    font-size: 0.72rem;
+    letter-spacing: 0.8px;
+  }
+
+  .header-right-accent {
+    display: none;
+  }
+
+  .hero-organic-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1.25rem;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .hero-text-side {
+    padding-right: 0;
+  }
+
+  .spec-main-title {
+    font-size: 2.4rem;
+    overflow-wrap: break-word;
+  }
+
+  .spec-desc {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .organic-transition-layer {
+    display: none;
+  }
+
+  .hero-image-side {
+    width: 100%;
+    height: 230px;
+    border-radius: 140px 140px 16px 16px;
+    box-shadow: none;
+  }
+
+  .project-detail-hero {
+    padding: 1.5rem 1.25rem 2rem;
+  }
+
+  .proj-title {
+    font-size: 2.2rem;
+    overflow-wrap: break-word;
+  }
+
+  .proj-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .project-main-content {
+    padding: 0 1rem 3rem;
+    margin-top: -1.5rem;
+  }
+
+  .project-story-centered {
+    padding: 0;
+  }
+
+  .project-pagination {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-top: 2rem;
+    margin-top: 3rem;
+  }
+
+  .pagination-link {
+    font-size: 0.78rem;
+  }
+
+  .photo-carousel-track {
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .carousel-item {
+    min-width: 0;
+  }
+
+  .car-img {
+    height: 60vh;
+    max-height: 420px;
+    max-width: 100%;
+  }
+
+  .dark-right-blob,
   .terracota-circle {
     opacity: 0.6;
     transform: scale(0.8);
